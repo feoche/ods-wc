@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@storybook/storybook-deployer": "^2.8.1",
     "core-js": "3"
   },
   "devDependencies": {
@@ -17,7 +18,8 @@
     "build-storybook": "build-storybook",
     "site:build": "npm run storybook:build",
     "storybook:build": "build-storybook -o _site",
-    "storybook:start": "start-storybook -p 9001"
+    "storybook:start": "start-storybook -p 9001",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "browserslist": [
     "last 2 chrome version",
