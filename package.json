@@ -15,7 +15,12 @@
     "storybook:start": "start-storybook -p 9001"
   },
   "dependencies": {
+    "@ovh-ux/ui-kit": "^3.4.1",
+    "@storybook/addon-a11y": "^5.1.10",
+    "@storybook/addon-viewport": "^5.1.10",
+    "@storybook/html": "^5.1.10",
     "@storybook/storybook-deployer": "^2.8.1",
+    "@storybook/theming": "^5.1.10",
     "lit-element": "^2.0.1",
     "lit-html": "^1.0.0"
   },

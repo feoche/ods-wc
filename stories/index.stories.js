@@ -12,17 +12,9 @@ import {
 import readme from '../README.md';
 import { OdsButton } from '../src/ods-button';
 
-addParameters({
-  options: {
-    isFullscreen: false,
-    panelPosition: 'right',
-  },
-});
-
 const clog = (text) => console.log(text);
 
 storiesOf('Components|Atoms', module)
-    .addDecorator(withKnobs)
     .add(
         `Button`,
         () => withClassPropertiesKnobs(OdsButton, {
