@@ -1,0 +1,29 @@
+{
+  "name": "ods-wc",
+  "version": "0.0.0",
+  "description": "Webcomponent for ODS",
+  "author": "ods-wc",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "site:build": "npm run storybook:build",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook -o _site -s storybook-static",
+    "storybook:start": "start-storybook -p 9001"
+  },
+  "dependencies": {
+    "@storybook/storybook-deployer": "^2.8.1",
+    "lit-element": "^2.0.1",
+    "lit-html": "^1.0.0"
+  },
+  "devDependencies": {
+    "@open-wc/demoing-storybook": "^0.3.0"
+  },
+  "browserslist": [
+    "last 2 chrome version",
+    "last 2 firefox version"
+  ]
+}
