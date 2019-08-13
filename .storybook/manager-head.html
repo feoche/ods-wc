@@ -1,9 +1,17 @@
+<script>
+  const pageTitle = `ODS-WC`;
+  // Update page title snippet
+  document.title = pageTitle;window.onload = function() {const titleEl = document.getElementsByTagName("title")[0];const docEl = document.documentElement;if (docEl && docEl.addEventListener) {docEl.addEventListener("DOMSubtreeModified", function(evt) {const t = evt.target;if (t === titleEl || (t.parentNode && t.parentNode === titleEl)) {document.title = pageTitle;}}, false);} else {document.onpropertychange = function() {if (window.event.propertyName === "title") {document.title = pageTitle;}};}};
+</script>
+<link rel="icon" href="https://www.ovh.com/fr/favicon.ico" type="image/x-icon">
 <style>
   .sidebar-container * {
     color: white !important;
   }
   #storybook-preview-iframe {
     margin: 1em;
+    width: calc(100% - 2em);
+    height: calc(100% - 2em);
   }
   #storybook-panel-root {
     background: #F7F9FB;
