@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Storybook</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>html, body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }</style><script>/* globals window */
+  /* eslint-disable no-underscore-dangle */
+  try {
+    if (window.parent !== window) {
+      window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__;
+      window.__VUE_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+    }
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.warn('unable to connect to parent frame for connecting dev tools');
+  }</script><script>const pageTitle = `ODS-WC`;
+  // Update page title snippet
+  document.title = pageTitle;window.onload = function() {const titleEl = document.getElementsByTagName("title")[0];const docEl = document.documentElement;if (docEl && docEl.addEventListener) {docEl.addEventListener("DOMSubtreeModified", function(evt) {const t = evt.target;if (t === titleEl || (t.parentNode && t.parentNode === titleEl)) {document.title = pageTitle;}}, false);} else {document.onpropertychange = function() {if (window.event.propertyName === "title") {document.title = pageTitle;}};}};</script><link rel="icon" href="https://www.ovh.com/fr/favicon.ico" type="image/x-icon"><style>.sidebar-container * {
+    color: white !important;
+  }
+  .sidebar-subheading.sidebar-subheading {
+    font-size: 1em;
+    letter-spacing: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+    padding: 0.4em 0;
+    line-height: 1em;
+    font-family: "Tahoma";
+  }
+  #storybook-preview-iframe {
+    margin: 1em;
+    width: calc(100% - 2em);
+    height: calc(100% - 2em);
+  }
+  #storybook-panel-root {
+    background: #F7F9FB;
+    color: dimgray;
+  }
+  #storybook-panel-root>[data-simplebar="init"] {
+    background: #4383EC;
+  }
+  .simplebar-content>pre {
+    color: white !important;
+    background: #333;
+  }</style></head><body><div id="root"></div><script src="runtime~main.f78feadcfa756daa9a5b.bundle.js"></script><script src="vendors~main.f5990ed30ad499a17136.bundle.js"></script><script src="main.fba450d1104a43f11a1a.bundle.js"></script></body></html>
