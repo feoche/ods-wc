@@ -1,12 +1,26 @@
-<script>
-  const pageTitle = `ODS-WC`;
-  // Update page title snippet
-  document.title = pageTitle;window.onload = function() {const titleEl = document.getElementsByTagName("title")[0];const docEl = document.documentElement;if (docEl && docEl.addEventListener) {docEl.addEventListener("DOMSubtreeModified", function(evt) {const t = evt.target;if (t === titleEl || (t.parentNode && t.parentNode === titleEl)) {document.title = pageTitle;}}, false);} else {document.onpropertychange = function() {if (window.event.propertyName === "title") {document.title = pageTitle;}};}};
-</script>
 <link rel="icon" href="https://www.ovh.com/fr/favicon.ico" type="image/x-icon">
+<script>
+  document.title = `ODS-WC`;
+  window.onload = function() {
+    setTimeout(() => {
+      document.title = `ODS-WC`;
+      document.getElementById(`storybook-explorer-searchfield`).setAttribute(`placeholder`, `Search...`);
+    }, 3000);
+  }
+</script>
 <style>
   .sidebar-container * {
     color: white !important;
+  }
+  .sidebar-header img {
+    max-width: 2em;
+  }
+  .simplebar-content form {
+    margin: 0 0 0.5em;
+    padding: 0 .5em;
+  }
+  .simplebar-content form svg {
+    color: white;
   }
   .sidebar-subheading.sidebar-subheading {
     font-size: 1em;
@@ -17,7 +31,7 @@
     background: rgba(0,0,0,0.4);
     padding: 0.4em 0;
     line-height: 1em;
-    font-family: "Tahoma";
+    text-transform: capitalize;
   }
   #storybook-preview-iframe {
     margin: 1em;
