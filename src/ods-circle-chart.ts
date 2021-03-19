@@ -33,6 +33,12 @@ export class OdsCircleChart extends LitElement {
     @property({type: Number})
     maxBound = 100;
 
+    /**
+     * The total for counting segments
+     */
+    @property({type: Boolean})
+    withLegends = false;
+
     constructor() {
         super();
     }
@@ -42,11 +48,7 @@ export class OdsCircleChart extends LitElement {
     }
 
     getStrokeDasharray(value: number, min: number, max: number): string {
-        let percent = this.getPercentage(value, min, max);
-        // eslint-disable-next-line
-        console.info(
-            "%c[fe] percent", "background:#fff;color:#000",
-            percent);
+        let percent:number = this.getPercentage(value, min, max);
         return `${percent} ${100 - percent}`;
     }
 
@@ -89,12 +91,14 @@ export class OdsCircleChart extends LitElement {
         this.querySelectorAll("ods-circle-chart-segment").forEach((item:Element, index:number) => {
             const attribute:NamedNodeMap = item.attributes;
 
-            let template = html`
-                <li>
+            let template:TemplateResult = html`
+                <li class="legend">
                     <span class="shape-circle"
-                          style="--circle-donut-segment-background-color: ${SEGMENT_COLORS[index]}"></span> 
-                    <span>${attribute['title']?.value}</span>
-                    <div>${attribute['description']?.value}</div>
+                          style="--circle-donut-segment-background-color: ${SEGMENT_COLORS[index]}"></span>
+                    <span>
+                        <div>${attribute['title']?.value}</div>
+                        <div><small>${attribute['description']?.value}</small></div>
+                    </span>
                 </li>`;
             legends.push(template);
         });
@@ -128,6 +132,10 @@ export class OdsCircleChart extends LitElement {
                     flex: 1;
                     padding: 0 1em;
                     align-self: center;
+                }
+                
+                .figure-key {
+                    flex: 0 1 auto;
                 }
                 
                 .figure-content svg {
@@ -176,11 +184,17 @@ export class OdsCircleChart extends LitElement {
                     margin: 0;
                     padding: 0;
                     list-style: none;
+                    display: flex;
+                    flex-flow: column wrap;
+                    align-items: space-between;
                 }
                 
-                .figure-key-list li {
-                    margin: 0 0 8px;
+                .figure-key-list .legend {
+                    margin: 0 0 .2em;
                     padding: 0;
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
                 }
                 
                 .shape-circle {
@@ -225,20 +239,17 @@ export class OdsCircleChart extends LitElement {
                         </g>
                     </svg>
                 </div>
-                <figcaption class="figure-key">
-                    <ul class="figure-key-list"
-                          aria-hidden="true"
-                          role="presentation">
-                        ${this.getChartLegends()}
-                    </ul>
-                </figcaption>
+                ${this.withLegends?
+                    html`<figcaption class="figure-key">
+                            <ul class="figure-key-list"
+                                  aria-hidden="true"
+                                  role="presentation">
+                                ${this.getChartLegends()}
+                            </ul>
+                        </figcaption>`
+                    : ''
+                }                
             </figure>
         `;
     }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'ods-circle-chart': OdsCircleChart;
-  }
 }
