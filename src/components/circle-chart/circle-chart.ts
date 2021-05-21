@@ -1,15 +1,15 @@
 import {LitElement, html, customElement, property, TemplateResult, svg} from 'lit-element';
 
-import {styles} from './ods-circle-chart.styles';
+import {styles} from './circle-chart.styles';
 
-import {DEFAULT_VALUES, SEGMENT_COLORS} from './ods-circle-chart.constant';
+import {DEFAULT_VALUES, SEGMENT_COLORS} from './circle-chart.constant';
 
 /**
  * An example element.
  *
  */
 @customElement('ods-circle-chart')
-export class OdsCircleChart extends LitElement {
+export class CircleChart extends LitElement {
 
     /**
      * Chart title - displayed at the center of the chart

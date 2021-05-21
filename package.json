@@ -9,12 +9,17 @@
     "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-links": "^6.1.21",
+    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/web-components": "^6.1.21",
+    "autoprefixer": "latest",
     "babel-loader": "^8.2.2",
-    "lit-html": "^1.3.0"
+    "lit-html": "^1.3.0",
+    "postcss": "^8",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "latest"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
+    "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "site:build": "npm run storybook:build",
     "storybook:build": "build-storybook -o _site",

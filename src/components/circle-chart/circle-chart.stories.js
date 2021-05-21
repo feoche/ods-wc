@@ -1,6 +1,6 @@
 import {html} from 'lit-html';
 
-import './ods-circle-chart.ts';
+import './circle-chart.ts';
 
 // This default export determines where your story goes in the story list
 export default {
