@@ -1,0 +1,66 @@
+ods-circle-chart {
+    --circle-donut-background-color: var(--colors-g-050);
+    --circle-chart-color: var(--colors-p-800);
+    --circle-chart-color-dark: var(--colors-p-000);
+    --circle-donut-segment-background-color: var(--colors-p-500);
+
+    & figure {
+        @apply flex justify-around flex-col md:flex-row;
+    }
+
+    & .figure-content,
+    & .figure-key {
+        @apply flex-1 py-0 px-4 self-center;
+    }
+
+    & .figure-key {
+        @apply flex-initial;
+    }
+
+    & .figure-content svg {
+        @apply h-auto text-transparent;
+    }
+
+    & .donut-ring,
+    & .donut-segment {
+        @apply fill-current;
+    }
+
+    & .donut-ring {
+        stroke: var(--circle-donut-background-color);
+        stroke-width: 4;
+    }
+
+    & .donut-segment {
+        stroke-width: 4.1;
+    }
+
+    & .chart-text {
+        fill: var(--circle-chart-color);
+        @apply translate-y-1 transform;
+    }
+
+    & .chart-title {
+        @apply text-xs transform -translate-y-0.5;
+        text-anchor: middle;
+    }
+
+    & .chart-subtitle {
+        @apply uppercase translate-y-0.5 transform;
+        font-size: 0.2em;
+        text-anchor: middle;
+    }
+
+    & .figure-key-list {
+        @apply m-0 p-0 list-none flex flex-col flex-wrap;
+
+        & .legend {
+              @apply m-0 ml-1 p-0 flex flex-row flex-wrap items-center;
+        }
+    }
+
+    & .shape-circle {
+        @apply inline-block align-middle w-4 h-4 mr-4 rounded-full;
+        background-color: var(--circle-donut-segment-background-color);
+    }
+}

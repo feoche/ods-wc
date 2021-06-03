@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
     'stories': [
         '../src/**/*.stories.mdx',
@@ -6,13 +8,32 @@ module.exports = {
     'addons': [
         '@storybook/addon-essentials',
         '@storybook/addon-links',
-        {
-            name: '@storybook/addon-postcss',
-            options: {
-                postcssLoaderOptions: {
-                    implementation: require('postcss'),
-                },
-            },
-        },
     ],
+    webpackFinal: async (config) => {
+        config.module.rules.push({
+            test: /\.css$/,
+            use: [
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        postcssOptions: {
+                            plugins: [
+                                require('postcss-preset-env')(
+                                    {
+                                        browsers: "last 2 versions",
+                                        stage: 3,
+                                        features: {
+                                            "nesting-rules": true
+                                        }
+                                    }),
+                                require('tailwindcss'),
+                            ],
+                        },
+                    },
+                },
+            ],
+            include: path.resolve(__dirname, '../'),
+        })
+        return config
+    },
 };

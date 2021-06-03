@@ -1,9 +1,11 @@
 module.exports = {
-    plugins: [
-        // PostCSS Preset Env includes autoprefixer and browsers option will be passed to it automatically.
-        require('postcss-preset-env'),
-        require('postcss-import'),
-        require('postcss-nested'),
-        require('tailwindcss')('./tailwind.config.js'),
-    ],
-};
+    plugins: {
+        "postcss-preset-env": {
+            browsers: "last 2 versions",
+            stage: 3,
+            features: {
+                "nesting-rules": true
+            }
+        },
+    }
+}

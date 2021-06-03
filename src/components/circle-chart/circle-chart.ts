@@ -1,8 +1,9 @@
-import {LitElement, html, customElement, property, TemplateResult, svg} from 'lit-element';
-
-import {styles} from './circle-chart.styles';
+import {LitElement, html, customElement, property, TemplateResult, svg, css} from 'lit-element';
 
 import {DEFAULT_VALUES, SEGMENT_COLORS} from './circle-chart.constant';
+import common from "../../common/index.css";
+import vendor from "../../vendor/index.css";
+import styles from "./circle-chart.css";
 
 /**
  * An example element.
@@ -120,7 +121,15 @@ export class CircleChart extends LitElement {
     }
 
     static get styles() {
-        return styles;
+        return [
+            common,
+            vendor,
+            styles
+        ];
+    }
+
+    createRenderRoot() {
+        return this;
     }
 
     render() {

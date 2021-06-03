@@ -1,6 +1,6 @@
 import {html} from 'lit-html';
 
-import './test.ts';
+import '../components/test/test.ts';
 
 // This default export determines where your story goes in the story list
 export default {

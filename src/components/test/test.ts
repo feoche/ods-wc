@@ -1,7 +1,7 @@
 import {LitElement, html, customElement, property, css} from 'lit-element';
 
-import {styles} from './test.styles';
-
+import tailwind from '../../vendor/tailwind.css';
+import styles from './test.css';
 
 /**
  * An example element.
@@ -56,17 +56,7 @@ export class Test extends LitElement {
         super();
     }
 
-    static get styles() {
-        return css`
-        @import 'tailwindcss/base';
-        @import 'tailwindcss/components';
-        @import 'tailwindcss/utilities';
-            .mx-auto {
-                @apply bg-red-500;
-            }
-        `;
-    }
-
+    static styles = css([tailwind, styles]);
 
     createRenderRoot() {
         return this;
